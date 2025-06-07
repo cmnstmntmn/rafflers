@@ -8,16 +8,24 @@ defmodule RaffleyWeb.Router do
     plug :put_root_layout, html: {RaffleyWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :spy
   end
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
+  def spy(conn, _opts) do
+    conn = assign(conn, :greeting, "Welcome")
+    # IO.inspect(conn)
+    conn
+  end
+
   scope "/", RaffleyWeb do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/rule", RuleController, :index
   end
 
   # Other scopes may use custom stacks.
