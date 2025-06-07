@@ -1,0 +1,16 @@
+    <section class="estimator bg-red-100">
+      <h1 class="text-xl tex-red-500">Price calculator</h1>
+      <button class="apparence-button bg-black text-red-500" phx-click="add" phx-value-quantity="5">
+        +
+      </button>
+
+      <button phx-click="remove">-</button>
+
+      <form phx-change="set-price">
+        <label>Ticket price</label>
+        <input type="number" name="price" value={@price} />
+      </form>
+
+      {@tickets}
+      {@price} <br /> ${@tickets * @price}
+    </section>

@@ -1,5 +1,6 @@
 defmodule RaffleyWeb.EstimatorLive do
   use RaffleyWeb, :live_view
+  use RaffleyNative, :live_view
 
   def mount(_params, _session, socket) do
     IO.inspect(self(), label: "MOUNT")
@@ -12,28 +13,28 @@ defmodule RaffleyWeb.EstimatorLive do
     {:ok, socket}
   end
 
-  def render(assigns) do
-    IO.inspect(self(), label: "RENDER")
+  # def render(assigns) do
+  #   IO.inspect(self(), label: "RENDER")
 
-    ~H"""
-    <section class="estimator bg-red-100">
-      <h1 class="text-xl tex-red-500">Price calculator</h1>
-      <button class="apparence-button bg-black text-red-500" phx-click="add" phx-value-quantity="5">
-        +
-      </button>
+  #   ~H"""
+  #   <section class="estimator bg-red-100">
+  #     <h1 class="text-xl tex-red-500">Price calculator</h1>
+  #     <button class="apparence-button bg-black text-red-500" phx-click="add" phx-value-quantity="5">
+  #       +
+  #     </button>
 
-      <button phx-click="remove">-</button>
+  #     <button phx-click="remove">-</button>
 
-      <form phx-change="set-price">
-        <label>Ticket price</label>
-        <input type="number" name="price" value={@price} />
-      </form>
+  #     <form phx-change="set-price">
+  #       <label>Ticket price</label>
+  #       <input type="number" name="price" value={@price} />
+  #     </form>
 
-      {@tickets}
-      {@price} <br /> ${@tickets * @price}
-    </section>
-    """
-  end
+  #     {@tickets}
+  #     {@price} <br /> ${@tickets * @price}
+  #   </section>
+  #   """
+  # end
 
   def handle_event("add", %{"quantity" => quantity}, socket) do
     IO.inspect(self(), label: "ADD")
