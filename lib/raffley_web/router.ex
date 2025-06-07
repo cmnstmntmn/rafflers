@@ -6,11 +6,14 @@ defmodule RaffleyWeb.Router do
       "html",
       "swiftui"
     ]
+
     plug :fetch_session
     plug :fetch_live_flash
+
     plug :put_root_layout,
       html: {RaffleyWeb.Layouts, :root},
       swiftui: {RaffleyWeb.Layouts.SwiftUI, :root}
+
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -22,9 +25,10 @@ defmodule RaffleyWeb.Router do
   scope "/", RaffleyWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # get "/", PageController, :home
     get "/rules", RuleController, :index
     get "/rules/:id", RuleController, :show
+    live "/", HomeLive
     live "/estimator", EstimatorLive
   end
 
