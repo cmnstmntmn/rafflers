@@ -1,5 +1,8 @@
-<Text>You are on the home page</Text>
+<VStack class="color-blue" style={"navigationTitle(:title);"}>
+
+<Text template={:title}>Home</Text>
 <.link navigate="estimator">To about</.link>
+<.link navigate="raffler">To raffler</.link>
 
-<Spacer />
-
+<Button phx-click="sheet-changed">Toggle</Button>
+</VStack>

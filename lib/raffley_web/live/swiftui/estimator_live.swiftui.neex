@@ -1,12 +1,9 @@
 
-<VStack>
-<Text>Estimator</Text>
+<VStack style={"navigationTitle(:title);"}>
+<Text template={:title} class="color-red">Estimator</Text>
 <Text>{@tickets}</Text>
 <Button phx-click="add" phx-value-quantity={5}>ceva</Button>
-<List>
-<Text>asda</Text>
-<Text>asda</Text>
-
-</List>
-</VStack>
 <.link navigate="/">Home</.link>
+
+</VStack>
+

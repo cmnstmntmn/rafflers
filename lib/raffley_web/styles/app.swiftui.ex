@@ -5,7 +5,29 @@ defmodule RaffleyWeb.Styles.App.SwiftUI do
   # Refer to your client's documentation on what the proper syntax
   # is for defining rules within classes
   ~SHEET"""
+  "color-" <> color_name do
+    color(.{color_name})
+
+  # "sheet" do
+  #   sheet(isPresented: attr("sheet-open"), content: :content)
+  # end
+
+  # "dragindicator:" do
+  # presentationDragIndicator(.{props})
+  # end
+
+  # "ultrathinmaterial" do
+  # presentationBackground(.ultraThinMaterial)
+  # end
   """
+
+  # def class("detents:" <> props) do
+  #   [start, end] = String.split(props, "")
+
+  #   ~RULES"""
+  #     presentationDetents([.{start}, .{end}])
+  #   """
+  # end
 
   # If you need to have greater control over how your style rules are created
   # you can use the function defintion style which is more verbose but allows
