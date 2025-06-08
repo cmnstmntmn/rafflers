@@ -9,8 +9,8 @@ defmodule RaffleyWeb.EstimatorLive do
       Process.send_after(self(), :tick, 2000)
     end
 
-    socket = assign(socket, tickets: 3, price: 3)
-    {:ok, socket}
+    socket = assign(socket, tickets: 3, price: 3, page_title: "Estimator")
+    {:ok, socket, layout: {RaffleyWeb.Layouts, :simple}}
   end
 
   # def render(assigns) do
