@@ -1,4 +1,14 @@
 <div class="raffle-index">
+  <.banner>
+    <.icon name="hero-sparkles-solid" /> Mystery Raffle Coming Soon!
+    <:details :let={vibe}>
+      Details slot {vibe} To be revealed tomorow!
+    </:details>
+        <:details>
+      Details two
+    </:details>
+
+  </.banner>
   <div class="raffles">
     <.raffle_card :for={raffle <- @raffles} raffle={raffle} />
   </div>
