@@ -1,0 +1,2 @@
+Raffler
+ {inspect(@raffle, pretty: true)}

@@ -1,0 +1,22 @@
+Raffler
+<div class="raffle-show">
+  <div class="raffle">
+
+  <img src={@raffle.image_path} />
+  <section>
+      
+      <.badge status={@raffle.status} />
+  </section>
+  </div>
+
+  <div>
+    <ol class="raffles flex flex-row gap-4">
+        <li :for={raffle <- @featured_raffles}>
+          <img src={raffle.image_path} />
+          <.badge status={raffle.status} />
+        </li>
+    </ol>
+  </div>
+</div>
+
+ {inspect(@featured_raffles, pretty: true)}

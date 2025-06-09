@@ -3,6 +3,7 @@
 <Text template={:title}>Home</Text>
 <.link navigate="estimator">To about</.link>
 <.link navigate="raffler">To raffler</.link>
+<.link navigate="raffler/2">To raffler</.link>
 
 <Button phx-click="sheet-changed">Toggle</Button>
 </VStack>
