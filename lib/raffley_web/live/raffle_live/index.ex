@@ -12,7 +12,14 @@ defmodule RaffleyWeb.RaffleLive.Index do
 
   def raffle_card(assigns) do
     ~H"""
-    <div class="card">
+    <div class="card relative">
+      <.link
+        navigate={~p"/raffler/#{@raffle}"}
+        class="absolute inset-0 z-10"
+        aria-label="View details for my Card"
+      >
+        <span class="sr-only">View details for My Card</span>
+      </.link>
       <img src={@raffle.image_path} />
       <h2>{@raffle.prize}</h2>
       <div class="details">
@@ -20,7 +27,6 @@ defmodule RaffleyWeb.RaffleLive.Index do
           ${@raffle.ticket_price}/ticket
         </div>
         <.badge status={@raffle.status} />
-        <a href={~p"/#{@raffle.id}"}>{@raffle.prize}</a>
       </div>
     </div>
     """
